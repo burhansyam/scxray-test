@@ -475,28 +475,7 @@ cat > /usr/local/etc/xray/config.json << END
 }
 
 END
-#install ssh ovpn
-echo -e "$green[INFO]$NC Install SSH"
-sleep 2
-clear
-wget https://raw.githubusercontent.com/ALVIICELL/VVIP/ipuk/ssh/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
-echo -e "$green[INFO]$NC Install WEBSOCKET!"
-wget https://raw.githubusercontent.com/ALVIICELL/VVIP/ipuk/websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
-clear
-wget https://raw.githubusercontent.com/ALVIICELL/VVIP/ipuk/websocket/nontls.sh && chmod +x nontls.sh && ./nontls.sh
-clear
-echo -e "$green[INFO]$NC INSTALL SLOWDNS"
-sleep 2
-wget https://raw.githubusercontent.com/ALVIICELL/VVIP/ipuk/slowdns/installsl.sh && chmod +x installsl.sh && ./installsl.sh
-clear
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green      Install openvpn              $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-sleep 2
-wget -q -O vpn.sh https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/ssh/vpn.sh && chmod 777 vpn.sh && ./vpn.sh
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-clear
-wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kyt-team/scxray/main/other/nginx.conf" >/dev/null 2>&1
+wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/nginx.conf" >/dev/null 2>&1
 wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/xray.conf" >/dev/null 2>&1
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
 sed -i "s/xxx/${domain}/g" /var/www/html/index.html
@@ -560,65 +539,65 @@ net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 # downldo scrip menu
 cd /usr/bin
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Main Menu${NC}"
-wget -q -O menu "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/menu.sh"
-wget -q -O vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/vmess.sh"
-wget -q -O vless "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/vless.sh"
-wget -q -O trojan "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/trojan.sh"
-wget -q -O shadowsocks "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/shadowsocks.sh"
-wget -q -O shadowsocks2022 "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/shadowsocks2022.sh"
-wget -q -O socks "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/socks.sh"
-wget -q -O allxray "https://raw.githubusercontent.com/kyt-team/scxray/main/menu/allxray.sh"
+wget -q -O menu "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/menu.sh"
+wget -q -O vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/vmess.sh"
+wget -q -O vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/vless.sh"
+wget -q -O trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/trojan.sh"
+wget -q -O shadowsocks "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/shadowsocks.sh"
+wget -q -O shadowsocks2022 "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/shadowsocks2022.sh"
+wget -q -O socks "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/socks.sh"
+wget -q -O allxray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/menu/allxray.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vmess${NC}"
-wget -q -O add-vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/vmess/add-vmess.sh"
-wget -q -O del-vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/vmess/del-vmess.sh"
-wget -q -O extend-vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/vmess/extend-vmess.sh"
-wget -q -O trialvmess "https://raw.githubusercontent.com/kyt-team/scxray/main/vmess/trialvmess.sh"
-wget -q -O cek-vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/vmess/cek-vmess.sh" 
+wget -q -O add-vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vmess/add-vmess.sh"
+wget -q -O del-vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vmess/del-vmess.sh"
+wget -q -O extend-vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vmess/extend-vmess.sh"
+wget -q -O trialvmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vmess/trialvmess.sh"
+wget -q -O cek-vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vmess/cek-vmess.sh" 
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Vless${NC}"
-wget -q -O add-vless "https://raw.githubusercontent.com/kyt-team/scxray/main/vless/add-vless.sh"
-wget -q -O del-vless "https://raw.githubusercontent.com/kyt-team/scxray/main/vless/del-vless.sh"
-wget -q -O extend-vless "https://raw.githubusercontent.com/kyt-team/scxray/main/vless/extend-vless.sh"
-wget -q -O trialvless "https://raw.githubusercontent.com/kyt-team/scxray/main/vless/trialvless.sh"
-wget -q -O cek-vless "https://raw.githubusercontent.com/kyt-team/scxray/main/vless/cek-vless.sh"
+wget -q -O add-vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vless/add-vless.sh"
+wget -q -O del-vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vless/del-vless.sh"
+wget -q -O extend-vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vless/extend-vless.sh"
+wget -q -O trialvless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vless/trialvless.sh"
+wget -q -O cek-vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/vless/cek-vless.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Trojan${NC}"
-wget -q -O add-trojan "https://raw.githubusercontent.com/kyt-team/scxray/main/trojan/add-trojan.sh"
-wget -q -O del-trojan "https://raw.githubusercontent.com/kyt-team/scxray/main/trojan/del-trojan.sh"
-wget -q -O extend-trojan "https://raw.githubusercontent.com/kyt-team/ALL-XRAY/main/trojan/extend-trojan.sh"
-wget -q -O trialtrojan "https://raw.githubusercontent.com/kyt-team/scxray/trojan/trialtrojan.sh"
-wget -q -O cek-trojan "https://raw.githubusercontent.com/kyt-team/scxray/trojan/cek-trojan.sh"
+wget -q -O add-trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/main/trojan/add-trojan.sh"
+wget -q -O del-trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/main/trojan/del-trojan.sh"
+wget -q -O extend-trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/main/trojan/extend-trojan.sh"
+wget -q -O trialtrojan "https://raw.githubusercontent.com/burhansyam/scxray-test/trojan/trialtrojan.sh"
+wget -q -O cek-trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/trojan/cek-trojan.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu All Xray${NC}"
-wget -q -O add-xray "https://raw.githubusercontent.com/kyt-team/scxray/main/allxray/add-xray.sh"
-wget -q -O del-xray "https://raw.githubusercontent.com/kyt-team/scxray/main/allxray/del-xray.sh"
-wget -q -O extend-xray "https://raw.githubusercontent.com/kyt-team/scxray/main/allxray/extend-xray.sh"
-wget -q -O trialxray "https://raw.githubusercontent.com/kyt-team/scxray/main/allxray/trialxray.sh"
-wget -q -O cek-xray "https://raw.githubusercontent.com/kyt-team/scxray/main/allxray/cek-xray.sh"
+wget -q -O add-xray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/allxray/add-xray.sh"
+wget -q -O del-xray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/allxray/del-xray.sh"
+wget -q -O extend-xray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/allxray/extend-xray.sh"
+wget -q -O trialxray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/allxray/trialxray.sh"
+wget -q -O cek-xray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/allxray/cek-xray.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Menu Log${NC}"
-wget -q -O log-create "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-create.sh"
-wget -q -O log-vmess "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-vmess.sh"
-wget -q -O log-vless "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-vless.sh"
-wget -q -O log-trojan "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-trojan.sh"
-wget -q -O log-ss "https://raw.githubusercontent.com/kyt-team/ALL-XRAY/main/log/log-ss.sh"
-wget -q -O log-ss2022 "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-ss2022.sh"
-wget -q -O log-socks "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-socks.sh"
-wget -q -O log-allxray "https://raw.githubusercontent.com/kyt-team/scxray/main/log/log-allxray.sh"
+wget -q -O log-create "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-create.sh"
+wget -q -O log-vmess "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-vmess.sh"
+wget -q -O log-vless "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-vless.sh"
+wget -q -O log-trojan "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-trojan.sh"
+wget -q -O log-ss "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-ss.sh"
+wget -q -O log-ss2022 "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-ss2022.sh"
+wget -q -O log-socks "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-socks.sh"
+wget -q -O log-allxray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/log/log-allxray.sh"
 sleep 0.5
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Other Menu${NC}"
-wget -q -O xp "https://raw.githubusercontent.com/kyt-team/scxray/main/other/xp.sh"
-wget -q -O dns "https://raw.githubusercontent.com/kyt-team/scxray/main/other/dns.sh"
-wget -q -O certxray "https://raw.githubusercontent.com/kyt-team/scxray/main/other/certxray.sh"
-wget -q -O xraymod "https://raw.githubusercontent.com/kyt-team/scxray/main/other/xraymod.sh"
-wget -q -O xrayofficial "https://raw.githubusercontent.com/kyt-team/scxray/main/other/xrayofficial.sh"
-wget -q -O about "https://raw.githubusercontent.com/kyt-team/scxray/main/other/about.sh"
-wget -q -O clear-log "https://raw.githubusercontent.com/kyt-team/scxray/main/other/clear-log.sh"
+wget -q -O xp "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/xp.sh"
+wget -q -O dns "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/dns.sh"
+wget -q -O certxray "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/certxray.sh"
+wget -q -O xraymod "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/xraymod.sh"
+wget -q -O xrayofficial "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/xrayofficial.sh"
+wget -q -O about "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/about.sh"
+wget -q -O clear-log "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/clear-log.sh"
 echo -e "${GB}[ INFO ]${NC} ${YB}Download All Menu Done${NC}"
 wget -q -O speedtest "https://raw.githubusercontent.com/kyt-team/supreme/aio/ssh/speedtest_cli.py"
-wget -q -O Restore "https://raw.githubusercontent.com/kyt-team/scxray/main/other/restore.sh"
-wget -q -O Backup "https://raw.githubusercontent.com/kyt-team/scxray/main/other/backup.sh"
+wget -q -O Restore "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/restore.sh"
+wget -q -O Backup "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/backup.sh"
 apt-get install speedtest
 sleep 2
 chmod +x add-vmess
