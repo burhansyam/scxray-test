@@ -92,7 +92,7 @@ rm /var/www/html/*.html
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 cd /var/www/html/ 
-wget https://raw.githubusercontent.com/kyt-team/scxray/main/web.zip
+wget https://raw.githubusercontent.com/burhansyam/scxray-test/main/web.zip
 unzip -x web.zip 
 chmod +x /var/www/html/*
 cd
