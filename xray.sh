@@ -497,7 +497,7 @@ wget -q -O vpn.sh https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/ss
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 clear
 wget -q -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/kyt-team/scxray/main/other/nginx.conf" >/dev/null 2>&1
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/kyt-team/scxray/main/other/xray.conf" >/dev/null 2>&1
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/xray.conf" >/dev/null 2>&1
 sed -i "s/xxx/${domain}/g" /etc/nginx/conf.d/xray.conf
 sed -i "s/xxx/${domain}/g" /var/www/html/index.html
 sleep 0.5
