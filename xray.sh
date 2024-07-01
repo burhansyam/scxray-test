@@ -87,6 +87,8 @@ sleep 1
 cd
 clear
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
+sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 apt install nginx -y
 rm /var/www/html/*.html
 rm /etc/nginx/sites-enabled/default
@@ -681,7 +683,7 @@ echo ""
 echo ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" |  
 echo ""
-echo -e "                ${WB}DEV SCRIPT BY ALVI TUNNEL${NC}"
+echo -e "                ${WB}BURHANSYAM VPS TUNNELS${NC}"
 echo ""
 echo -e "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" | 
 echo -e "  ${WB}»»» Protocol Service «««  |  »»» Network Protocol «««${NC}  "
