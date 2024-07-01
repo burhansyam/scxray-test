@@ -35,14 +35,14 @@ sed -i '/#vless$/a\#= '"$user $exp"'\
 },{"id": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 sed -i '/#vless-grpc$/a\#= '"$user $exp"'\
 },{"id": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
-vlesslink1="vless://${user}@104.18.25.139:$tls?sni=${domain}&host=${domain}&type=ws&security=tls&path=%2Fvless&encryption=none#Tsel_Edu_${domain}"
-vlesslink2="vless://${user}@${domain}:$none?host=myorbit.id&path=%2Fkuota-habis%2F&encryption=none&type=ws#Orbit_${domain}"
-vlesslink3="vless://${user}@104.18.23.187:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#Tsel_GameMax_${domain}"
-vlesslink4="vless://${user}@investor.fb.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_FB_${domain}"
-vlesslink5="vless://${user}@${domain}:$none?host=myim3-he.ioh.co.id&path=api%2Fv1%2Ftoken%2Fhetoken%2Fvless&type=ws&encryption=none#IM3_Opok_${domain}"
-vlesslink6="vless://${user}@quiz.staging.vidio.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_Vidio_${domain}"
-vlesslink7="vless://${user}@investors.spotify.com:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_Spotify_${domain}"
-vlesslink8="vless://${user}@df.game.naver.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_WLG_${domain}"
+vlesslink1="vless://${user}@104.18.25.139:443?sni=${domain}&host=${domain}&type=ws&security=tls&path=%2Fvless&encryption=none#Tsel_Edu_${domain}"
+vlesslink2="vless://${user}@${domain}:80?host=myorbit.id&path=%2Fkuota-habis%2F&encryption=none&type=ws#Orbit_${domain}"
+vlesslink3="vless://${user}@104.18.23.187:443?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#Tsel_GameMax_${domain}"
+vlesslink4="vless://${user}@investor.fb.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_FB_${domain}"
+vlesslink5="vless://${user}@${domain}:80?host=myim3-he.ioh.co.id&path=api%2Fv1%2Ftoken%2Fhetoken%2Fvless&type=ws&encryption=none#IM3_Opok_${domain}"
+vlesslink6="vless://${user}@quiz.staging.vidio.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_Vidio_${domain}"
+vlesslink7="vless://${user}@investors.spotify.com:443?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_Spotify_${domain}"
+vlesslink8="vless://${user}@df.game.naver.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_WLG_${domain}"
 cat > /var/www/html/vless/vless-$user.txt << END
 ==========================
 Vless WS (CDN) TLS
