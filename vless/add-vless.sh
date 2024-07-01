@@ -32,9 +32,9 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vless$/a\#= '"$user $exp"'\
-},{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
+},{"id": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 sed -i '/#vless-grpc$/a\#= '"$user $exp"'\
-},{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
+},{"id": "'""$user""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 vlesslink1="vless://${user}@104.18.25.139:$tls?sni=${domain}&host=${domain}&type=ws&security=tls&path=%2Fvless&encryption=none#Tsel_Edu_${domain}"
 vlesslink2="vless://${user}@${domain}:$none?host=myorbit.id&path=%2Fkuota-habis%2F&encryption=none&type=ws#Orbit_${domain}"
 vlesslink3="vless://${user}@104.18.23.187:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#Tsel_GameMax_${domain}"
