@@ -51,7 +51,7 @@ Vless WS (CDN) TLS
 type: vless
 server: ${domain}
 port: 443
-uuid: ${uuid}
+uuid: ${user}
 cipher: auto
 udp: true
 tls: true
@@ -69,7 +69,7 @@ Vless WS (CDN)
 type: vless
 server: ${domain}
 port: 80
-uuid: ${uuid}
+uuid: ${user}
 cipher: auto
 udp: true
 tls: false
@@ -86,7 +86,7 @@ Vless gRPC (CDN)
 server: $domain
 port: 443
 type: vless
-uuid: $uuid
+uuid: $user
 cipher: auto
 network: grpc
 tls: true
@@ -97,11 +97,11 @@ grpc-service-name: "vless-grpc"
 ==========================
 Link Vless Account
 ==========================
-Link TL   : vless://$uuid@$domain:443?path=/vless&security=tls&encryption=none&host=$domain&type=ws&sni=$domain#$user
+Link TL   : vless://$user@$domain:443?path=/vless&security=tls&encryption=none&host=$domain&type=ws&sni=$domain#$user
 ==========================
-Link NTLS : vless://$uuid@$domain:80?path=/vless&security=none&encryption=none&host=$domain&type=ws#$user
+Link NTLS : vless://$user@$domain:80?path=/vless&security=none&encryption=none&host=$domain&type=ws#$user
 ==========================
-Link gRPC : vless://$uuid@$domain:443?security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=$domain#$user
+Link gRPC : vless://$user@$domain:443?security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=$domain#$user
 ==========================
 END
 ISP=$(cat /usr/local/etc/xray/org)
@@ -121,25 +121,13 @@ echo -e "Port NTLS     : 80" | tee -a /user/log-vless-$user.txt
 echo -e "Port gRPC     : 443" | tee -a /user/log-vless-$user.txt
 echo -e "Alt Port TLS  : 2053, 2083, 2087, 2096, 8443" | tee -a /user/log-vless-$user.txt
 echo -e "Alt Port NTLS : 8080, 8880, 2052, 2082, 2086, 2095" | tee -a /user/log-vless-$user.txt
-echo -e "id            : ${uuid}" | tee -a /user/log-vless-$user.txt
+echo -e "id            : ${user}" | tee -a /user/log-vless-$user.txt
 echo -e "Encryption    : none" | tee -a /user/log-vless-$user.txt
 echo -e "Network       : Websocket, gRPC" | tee -a /user/log-vless-$user.txt
 echo -e "Path          : /vless" | tee -a /user/log-vless-$user.txt
 echo -e "ServiceName   : vless-grpc" | tee -a /user/log-vless-$user.txt
 echo -e "Alpn          : h2, http/1.1" | tee -a /user/log-vless-$user.txt
 echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
-echo -e "\E[44;1;39m Vless Account \E[0m" | tee -a /user/log-vless-$user.txt
-echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
-echo -e "Remarks : ${user}" | tee -a /user/log-vless-$user.txt
-echo -e "Domain : ${domain}" | tee -a /user/log-vless-$user.txt
-echo -e "port TLS : $tls" | tee -a /user/log-vless-$user.txt
-echo -e "port none TLS : $none" | tee -a /user/log-vless-$user.txt
-echo -e "id : ${user}" | tee -a /user/log-vless-$user.txt
-echo -e "Encryption : none" | tee -a /user/log-vless-$user.txt
-echo -e "Network : ws" | tee -a /user/log-vless-$user.txt
-echo -e "Path : /kuota-habis/" | tee -a /user/log-vless-$user.txt
-#echo -e "Path : /vless-grpc" | tee -a /user/log-vless-$user.txt
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
 echo -e "Injek Tsel Pendidikan : " | tee -a /user/log-vless-$user.txt
 echo -e "${vlesslink1}" | tee -a /user/log-vless-$user.txt
