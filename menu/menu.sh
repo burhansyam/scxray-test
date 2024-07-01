@@ -101,7 +101,7 @@ echo -e " \033[32m╭═══════════════════�
 echo -e " \033[35m│$NC ${MB}[01]${NC} ${YB}Vmess Menu${NC}             ${MB}[06]${NC} ${YB}Socks5 Menu${NC}"
 echo -e " \033[35m│$NC ${MB}[02]${NC} ${YB}Vless Menu${NC}             ${MB}[07]${NC} ${YB}All Acount Menu${NC}"
 echo -e " \033[35m│$NC ${MB}[03]${NC} ${YB}Trojan Menu${NC}            ${MB}[08]${NC} ${YB}Log Create Account${NC}"
-echo -e " \033[35m│$NC ${MB}[04]${NC} ${YB}Ssh Menu${NC}        ${MB}[09]${NC} ${YB}Backup Vps Menu${NC}"
+echo -e " \033[35m│$NC ${MB}[04]${NC} ${YB}Ssh Menu${NC}               ${MB}[09]${NC} ${YB}Backup Vps Menu${NC}"
 echo -e " \033[35m│$NC ${MB}[05]${NC} ${YB}Shadowsoks2022 Menu${NC}    ${MB}[10]${NC} ${YB}Restore Vps Menu${NC}"
 echo -e " \033[33m╰══════════════════════════════════════════════════════════╯\e[0m"
 echo -e " \033[36m╭══════════════════════════════════════════════════════════╮\e[0m"
