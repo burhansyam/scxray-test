@@ -9,6 +9,8 @@ CB='\e[35;1m'
 WB='\e[37;1m'
 clear
 domain=$(cat /usr/local/etc/xray/domain)
+tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
+none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "${BB}————————————————————————————————————————————————————${NC}"
 echo -e "                  ${WB}Add Vless Account${NC}                 "
@@ -33,9 +35,14 @@ sed -i '/#vless$/a\#= '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
 sed -i '/#vless-grpc$/a\#= '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /usr/local/etc/xray/config.json
-vlesslink1="vless://$uuid@$domain:443?path=/vless&security=tls&encryption=none&host=$domain&type=ws&sni=$domain#$user"
-vlesslink2="vless://$uuid@$domain:80?path=/vless&security=none&encryption=none&host=$domain&type=ws#$user"
-vlesslink3="vless://$uuid@$domain:443?security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=$domain#$user"
+vlesslink1="vless://${user}@104.18.25.139:$tls?sni=${domain}&host=${domain}&type=ws&security=tls&path=%2Fvless&encryption=none#Tsel_Edu_${domain}"
+vlesslink2="vless://${user}@${domain}:$none?host=myorbit.id&path=%2Fkuota-habis%2F&encryption=none&type=ws#Orbit_${domain}"
+vlesslink3="vless://${user}@104.18.23.187:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#Tsel_GameMax_${domain}"
+vlesslink4="vless://${user}@investor.fb.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_FB_${domain}"
+vlesslink5="vless://${user}@104.17.3.81:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_Edu_${domain}"
+vlesslink6="vless://${user}@quiz.staging.vidio.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_Vidio_${domain}"
+vlesslink7="vless://${user}@investors.spotify.com:$tls?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_Spotify_${domain}"
+vlesslink8="vless://${user}@ava.game.naver.com:$none?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_WLG_${domain}"
 cat > /var/www/html/vless/vless-$user.txt << END
 ==========================
 Vless WS (CDN) TLS
@@ -121,16 +128,55 @@ echo -e "Path          : /vless" | tee -a /user/log-vless-$user.txt
 echo -e "ServiceName   : vless-grpc" | tee -a /user/log-vless-$user.txt
 echo -e "Alpn          : h2, http/1.1" | tee -a /user/log-vless-$user.txt
 echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
-echo -e "Link TLS      : ${vlesslink1}" | tee -a /user/log-vless-$user.txt
-echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
-echo -e "Link NTLS     : ${vlesslink2}" | tee -a /user/log-vless-$user.txt
-echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
-echo -e "Link gRPC     : ${vlesslink3}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "\E[44;1;39m Vless Account \E[0m" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Remarks : ${user}" | tee -a /user/log-vless-$user.txt
+echo -e "Domain : ${domain}" | tee -a /user/log-vless-$user.txt
+echo -e "port TLS : $tls" | tee -a /user/log-vless-$user.txt
+echo -e "port none TLS : $none" | tee -a /user/log-vless-$user.txt
+echo -e "id : ${user}" | tee -a /user/log-vless-$user.txt
+echo -e "Encryption : none" | tee -a /user/log-vless-$user.txt
+echo -e "Network : ws" | tee -a /user/log-vless-$user.txt
+echo -e "Path : /kuota-habis/" | tee -a /user/log-vless-$user.txt
+#echo -e "Path : /vless-grpc" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek Tsel Pendidikan : " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink1}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek Orbit Opok :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink2}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek GameMax :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink3}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek XL FB :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink4}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek XL Edu & Con :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink5}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek XL Vidio :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink6}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek XL Spotify :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink7}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "Injek WLG :  " | tee -a /user/log-vless-$user.txt
+echo -e "${vlesslink8}" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
+echo -e "@burhansyam | Exp : $exp" | tee -a /user/log-vless-$user.txt
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
 echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
 echo -e "Format Clash  : http://$domain:8000/vless/vless-$user.txt" | tee -a /user/log-vless-$user.txt
 echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
 echo -e "Expired On    : $exp" | tee -a /user/log-vless-$user.txt
 echo -e "${BB}————————————————————————————————————————————————————${NC}" | tee -a /user/log-vless-$user.txt
+echo " " | tee -a /user/log-vless-$user.txt
+echo " " | tee -a /user/log-vless-$user.txt
+echo " " | tee -a /user/log-vless-$user.txt
+echo " " | tee -a /user/log-vless-$user.txt
+echo " " | tee -a /user/log-vless-$user.txt
 echo " " | tee -a /user/log-vless-$user.txt
 echo " " | tee -a /user/log-vless-$user.txt
 echo " " | tee -a /user/log-vless-$user.txt
