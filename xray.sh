@@ -597,10 +597,12 @@ wget -q -O xrayofficial "https://raw.githubusercontent.com/burhansyam/scxray-tes
 wget -q -O about "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/about.sh"
 wget -q -O clear-log "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/clear-log.sh"
 echo -e "${GB}[ INFO ]${NC} ${YB}Download All Menu Done${NC}"
-wget -q -O speedtest "https://raw.githubusercontent.com/kyt-team/supreme/aio/ssh/speedtest_cli.py"
 wget -q -O Restore "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/restore.sh"
 wget -q -O Backup "https://raw.githubusercontent.com/burhansyam/scxray-test/main/other/backup.sh"
-apt-get install speedtest
+clear
+curl -s https://packagecloud.io/install/repositories/ookla/speedtest-cli/script.deb.sh | sudo bash
+sudo apt-get install speedtest
+clear
 sleep 2
 chmod +x add-vmess
 chmod +x del-vmess
