@@ -101,6 +101,10 @@ Link NTLS : vless://$user@$domain:80?path=/vless&security=none&encryption=none&h
 ==========================
 Link gRPC : vless://$user@$domain:443?security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=$domain#$user
 ==========================
+Sample Injek Bug
+==========================
+Tsel RG   : vless://$user@104.18.2.2:443?path=/vless&security=tls&encryption=none&host=$domain&type=ws&sni=$domain#Tsel_RG
+XL Vidio : vless://$user@quiz.staging.vidio.com:80?path=/vless&security=none&encryption=none&host=$domain&type=ws#XL_Vidio
 END
 ISP=$(cat /usr/local/etc/xray/org)
 CITY=$(cat /usr/local/etc/xray/city)
