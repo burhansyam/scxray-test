@@ -9,8 +9,6 @@ CB='\e[35;1m'
 WB='\e[37;1m'
 clear
 domain=$(cat /usr/local/etc/xray/domain)
-tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
-none="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 echo -e "${BB}————————————————————————————————————————————————————${NC}"
 echo -e "                  ${WB}Add Vless Account${NC}                 "
