@@ -131,14 +131,14 @@ case $opt in
 8) clear ; log-create ;;
 9) clear ; Backup ;;
 10) clear ; Restore ;;
-11) clear ; Retart ;;
+11) clear ; restart ; systemctl daemon-reload ;;
 12) clear ; speedtest ;;
 13) clear ; dns ;;
 14) clear ; certxray ;;
 15) clear ; xraymod ;;
 16) clear ; xrayofficial ;;
 17) clear ; about ;;
-18) clear ; Reboot ;;
+18) clear ; reboot ; /sbin/reboot ;;
 x) exit ;;
 *) echo -e "salah input" ; sleep 0.5 ; menu ;;
 esac
