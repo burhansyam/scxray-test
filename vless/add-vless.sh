@@ -37,7 +37,7 @@ vlesslink1="vless://${user}@104.18.25.139:443?sni=${domain}&host=${domain}&type=
 vlesslink2="vless://${user}@${domain}:80?host=myorbit.id&path=%2Fkuota-habis%2F&encryption=none&type=ws#Orbit_${domain}"
 vlesslink3="vless://${user}@104.18.23.187:443?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#Tsel_GameMax_${domain}"
 vlesslink4="vless://${user}@investor.fb.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_FB_${domain}"
-vlesslink5="vless://${user}@${domain}:80?host=myim3-he.ioh.co.id&path=api%2Fv1%2Ftoken%2Fhetoken%2Fvless&type=ws&encryption=none#IM3_Opok_${domain}"
+vlesslink5="vless://${user}@104.17.3.81:443?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_VIP_${domain}"
 vlesslink6="vless://${user}@quiz.staging.vidio.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_Vidio_${domain}"
 vlesslink7="vless://${user}@investors.spotify.com:443?host=${domain}&path=%2Fvless&type=ws&encryption=none&security=tls&sni=${domain}#XL_Spotify_${domain}"
 vlesslink8="vless://${user}@df.game.naver.com:80?host=${domain}&path=%2Fvless&type=ws&encryption=none#XL_WLG_${domain}"
@@ -143,7 +143,7 @@ echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | te
 echo -e "Injek XL FB :  " | tee -a /user/log-vless-$user.txt
 echo -e "${vlesslink4}" | tee -a /user/log-vless-$user.txt
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
-echo -e "Injek Indosat Opok :  " | tee -a /user/log-vless-$user.txt
+echo -e "Injek XL VIP :  " | tee -a /user/log-vless-$user.txt
 echo -e "${vlesslink5}" | tee -a /user/log-vless-$user.txt
 echo -e "\033[0;34m━━━━━━━━━━━━━━━━\033[0m" | tee -a /user/log-vless-$user.txt
 echo -e "Injek XL Vidio :  " | tee -a /user/log-vless-$user.txt
