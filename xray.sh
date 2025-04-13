@@ -81,7 +81,7 @@ curl -s ipinfo.io/timezone >> /usr/local/etc/xray/timezone
 clear
 echo -e "${GB}[ INFO ]${NC} ${YB}Downloading Xray-core mod${NC}"
 sleep 0.5
-wget -q -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
+wget -q -O /backup/xray.mod.backup "https://raw.githubusercontent.com/NevermoreSSH/yourpath/main/xray.linux.64bit"
 echo -e "${GB}[ INFO ]${NC} ${YB}Download Xray-core done${NC}"
 sleep 1
 cd
